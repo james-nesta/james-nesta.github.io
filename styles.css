@@ -1,0 +1,370 @@
+:root {
+  --page-width: 8.5in;
+  --page-height: 11in;
+  --page-margin-block: 0.591in;
+  --page-margin-inline: 0.748in;
+  --font-family: Tahoma, Arial, Helvetica, sans-serif;
+  --font-size-body: 10pt;
+  --font-size-contact: 10pt;
+  --font-size-name: 20pt;
+  --font-size-section: 14pt;
+  --line-height-body: 1.15;
+  --ink: #000;
+  --paper: #fff;
+  --canvas: #ecebea;
+  --screen-border: #d7d5d2;
+  --screen-muted: #595959;
+  --focus: #155eef;
+  --section-gap: 9pt;
+  --entry-gap: 5.5pt;
+  --bullet-gap: 1.25pt;
+  --list-indent: 18pt;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  font-family: var(--font-family);
+  background: var(--canvas);
+}
+
+body {
+  min-width: 18rem;
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.12em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.1em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.app-shell {
+  width: min-content;
+  min-width: 100%;
+  padding: 1.25rem max(1rem, calc((100% - var(--page-width)) / 2));
+}
+
+.resume-tools {
+  display: flex;
+  width: var(--page-width);
+  margin: 0 auto 0.65rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  color: var(--screen-muted);
+  font-size: 0.78rem;
+}
+
+.print-error {
+  margin: 0 auto 0 0;
+  color: #b42318;
+  font-weight: 700;
+}
+
+.print-button {
+  flex: none;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #aaa7a3;
+  border-radius: 0.25rem;
+  color: #202020;
+  background: #fff;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  border-color: #706d69;
+  background: #fafafa;
+}
+
+.print-button:active {
+  transform: translateY(1px);
+}
+
+.resume {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  margin: 0 auto;
+  padding: var(--page-margin-block) var(--page-margin-inline);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--screen-border);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 8%),
+    0 12px 36px rgb(0 0 0 / 12%);
+}
+
+.resume-header {
+  margin-bottom: 8pt;
+  text-align: center;
+}
+
+.resume-name {
+  margin: 0 0 4pt;
+  font-size: var(--font-size-name);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.contact-line {
+  display: flex;
+  margin: 0;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 0;
+  row-gap: 2pt;
+  font-size: var(--font-size-contact);
+  font-style: normal;
+  line-height: 1.15;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.contact-item + .contact-item::before {
+  margin: 0 0.55em;
+  content: "•";
+  font-size: 0.72em;
+}
+
+.resume-section {
+  margin: var(--section-gap) 0 0;
+}
+
+.resume-section:first-child {
+  margin-top: 0;
+}
+
+.section-heading {
+  margin: 0 0 4pt;
+  font-size: var(--font-size-section);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.resume-entry {
+  margin-top: var(--entry-gap);
+}
+
+.section-heading + .resume-entry {
+  margin-top: 0;
+}
+
+.entry-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1rem;
+  break-after: avoid;
+}
+
+.entry-title {
+  min-width: 0;
+  margin: 0;
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  line-height: var(--line-height-body);
+}
+
+.entry-role,
+.entry-organization {
+  font-style: italic;
+}
+
+.entry-qualifier,
+.entry-location {
+  font-style: normal;
+}
+
+.entry-dates {
+  font-weight: 700;
+  line-height: var(--line-height-body);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.resume-list {
+  margin: 1.5pt 0 0;
+  padding: 0 0 0 var(--list-indent);
+}
+
+.resume-list li {
+  margin: 0 0 var(--bullet-gap);
+  padding-left: 0;
+  break-inside: avoid;
+}
+
+.resume-list li:last-child {
+  margin-bottom: 0;
+}
+
+.resume-list li::marker {
+  font-size: 0.82em;
+}
+
+.education-list {
+  line-height: 1.08;
+}
+
+.interests-copy {
+  margin: 0;
+  line-height: 1.08;
+}
+
+.noscript-message {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid currentColor;
+}
+
+@media (max-width: 8.75in) {
+  .app-shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .resume-tools {
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid var(--screen-border);
+  }
+
+  .resume {
+    width: 100%;
+    min-height: 0;
+    padding: clamp(1.25rem, 6vw, 3rem);
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 34rem) {
+  .resume-header {
+    text-align: left;
+  }
+
+  .resume-name {
+    font-size: 18pt;
+  }
+
+  .contact-line {
+    display: block;
+    text-align: left;
+  }
+
+  .contact-item {
+    display: block;
+  }
+
+  .contact-item + .contact-item {
+    margin-top: 2pt;
+  }
+
+  .contact-item + .contact-item::before {
+    content: none;
+  }
+
+  .entry-header {
+    grid-template-columns: 1fr;
+    gap: 1pt;
+  }
+
+  .entry-dates {
+    text-align: left;
+  }
+}
+
+@page {
+  size: Letter portrait;
+  margin: var(--page-margin-block) var(--page-margin-inline);
+}
+
+@media print {
+  html,
+  body {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  body {
+    font-size: var(--font-size-body);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .app-shell {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-tools {
+    display: none;
+  }
+
+  .resume {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .resume-section,
+  .resume-entry,
+  .education-entry {
+    break-inside: auto;
+  }
+
+  .section-heading,
+  .entry-header {
+    break-after: avoid;
+  }
+
+  .resume-list li {
+    break-inside: avoid;
+  }
+}

@@ -1,0 +1,4 @@
+.qa/
+.resume-server.*.log
+node_modules/
+tmp/

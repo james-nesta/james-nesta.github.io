@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Resume for James Nesta, a DevOps lead specializing in automation."
+    />
+    <title>James Nesta — Resume</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="resume-data.js" defer></script>
+    <script src="resume.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <nav class="resume-tools" aria-label="Resume tools">
+        <p class="print-error" id="print-error" role="alert" hidden></p>
+        <button class="print-button" id="print-resume" type="button">
+          Print / Save as PDF
+        </button>
+      </nav>
+
+      <article class="resume" id="resume" aria-labelledby="resume-name">
+        <header class="resume-header" id="resume-header"></header>
+        <main class="resume-content" id="resume-content">
+          <noscript>
+            <p class="noscript-message">
+              JavaScript is required to render this resume. Enable JavaScript
+              and reload the page.
+            </p>
+          </noscript>
+        </main>
+      </article>
+    </div>
+  </body>
+</html>
