@@ -9,7 +9,6 @@
     />
     <title>James Nesta — Resume</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="resume-data.js" defer></script>
     <script src="resume.js" defer></script>
   </head>
   <body>
@@ -22,14 +21,234 @@
       </nav>
 
       <article class="resume" id="resume" aria-labelledby="resume-name">
-        <header class="resume-header" id="resume-header"></header>
+        <header class="resume-header" id="resume-header">
+          <h1 class="resume-name" id="resume-name">James Nesta</h1>
+          <address class="contact-line" aria-label="Contact information">
+            <span class="contact-item"><span>Bedford, MA</span></span>
+            <span class="contact-item"
+              ><a href="mailto:j.nesta@gmail.com">j.nesta@gmail.com</a></span
+            >
+            <span class="contact-item"
+              ><a href="https://jamesnesta.com">jamesnesta.com</a></span
+            >
+          </address>
+        </header>
         <main class="resume-content" id="resume-content">
-          <noscript>
-            <p class="noscript-message">
-              JavaScript is required to render this resume. Enable JavaScript
-              and reload the page.
+          <section
+            class="resume-section competencies"
+            aria-labelledby="section-key-competencies"
+          >
+            <h2 class="section-heading" id="section-key-competencies">
+              Key Competencies
+            </h2>
+            <ul class="resume-list">
+              <li>
+                DevOps lead with 20+ years in software and infrastructure,
+                focused on automating all the things.
+              </li>
+              <li>
+                Runs production systems across Azure, AWS, and on-premises
+                environments. Hands dirty with Kubernetes, Docker, NixOS,
+                virtual machines on vSphere and Nutanix, and good old-fashioned
+                bare metal.
+              </li>
+              <li>
+                Builds secure CI/CD pipelines with automated tests, linting, and
+                code-review controls. Adores type safety.
+              </li>
+              <li>
+                Automates infrastructure deployment and configuration with
+                Terraform, Pulumi, Ansible, and Puppet. When the tools fall
+                short, writes the missing pieces in TypeScript, Python, and Go.
+              </li>
+              <li>
+                Eclectic background spanning the infrastructure trifecta: server
+                ops, networking, and information security.
+              </li>
+              <li>
+                Superb communicator, both in writing and on the mic:
+                <a
+                  href="https://dev.to/james_nesta_5ae4292330e7e/test-5ge1"
+                  target="_blank"
+                  rel="noreferrer"
+                  >a technical essay on developer tooling</a
+                >
+                and
+                <a
+                  href="https://www.youtube.com/watch?v=wVvBld8bVdc"
+                  target="_blank"
+                  rel="noreferrer"
+                  >charity speedrun co-commentary (left commentator) viewed over
+                  1 million times</a
+                >.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            class="resume-section experience"
+            aria-labelledby="section-work-experience"
+          >
+            <h2 class="section-heading" id="section-work-experience">
+              Work Experience
+            </h2>
+
+            <article class="resume-entry experience-entry">
+              <header class="entry-header">
+                <h3 class="entry-title">
+                  <span class="entry-role">DevOps Lead</span
+                  ><span class="entry-organization">, LogixHealth</span>
+                </h3>
+                <span class="entry-dates">2024-Present</span>
+              </header>
+              <ul class="resume-list">
+                <li>
+                  Led a team to deploy Azure Kubernetes Service clusters and
+                  migrate on-premises Windows servers to containerized Linux
+                  workloads, modernizing the company's application
+                  infrastructure.
+                </li>
+                <li>
+                  Rebuilt the company's CI/CD platform around a centralized
+                  container, expanding basic compilation checks to 53 linters,
+                  type checkers, security scanners, and custom tools, including
+                  ESLint, Ruff, Gitleaks, and TFLint.
+                </li>
+                <li>
+                  Authored Azure DevOps tooling that emulates GitHub CODEOWNERS,
+                  enforcing over 500 granular ownership rules across the
+                  company's monorepos and strengthening security through
+                  required code review.
+                </li>
+                <li>
+                  Consolidated scattered SharePoint documentation into a
+                  centralized Docusaurus site backed by Git and Markdown,
+                  creating a searchable, version-controlled source of truth.
+                </li>
+              </ul>
+            </article>
+
+            <article class="resume-entry experience-entry">
+              <header class="entry-header">
+                <h3 class="entry-title">
+                  <span class="entry-role">Senior InfoSec Engineer</span
+                  ><span class="entry-organization">, MITRE</span>
+                </h3>
+                <span class="entry-dates">2017-2023</span>
+              </header>
+              <ul class="resume-list">
+                <li>
+                  Operated MITRE's InfoSec production fleet across datacenters
+                  and the cloud, protecting employees and sponsors from
+                  nation-state and criminal cyber threats.
+                </li>
+                <li>
+                  Engineered and implemented the Puppet infrastructure for
+                  InfoSec, providing configuration management for over 300
+                  production systems, resulting in automated pushes to Git and
+                  historical tracking of changes.
+                </li>
+                <li>
+                  Managed a 32-node Elasticsearch cluster with custom tooling
+                  written to automate deployment and upgrades, providing over
+                  100 terabytes of data for InfoSec analysts.
+                </li>
+                <li>
+                  Authored software to create custom environments in a sensitive
+                  InfoSec lab by interfacing with software-defined networking in
+                  Cisco Nexus, pfSense routers, and vSphere ESXi hosts, speeding
+                  up lab operations by an order of magnitude.
+                </li>
+              </ul>
+            </article>
+
+            <article class="resume-entry experience-entry">
+              <header class="entry-header">
+                <h3 class="entry-title">
+                  <span class="entry-role">Full Stack Engineer</span
+                  ><span class="entry-organization">, Symantec</span>
+                </h3>
+                <span class="entry-dates">2013-2017</span>
+              </header>
+              <ul class="resume-list">
+                <li>
+                  Architected and implemented the Symantec Cyber Readiness
+                  Challenge and the Symantec Cyber War Games, a series of over
+                  50 offensive hacking challenges that have been held both
+                  online and in over 30 locations around the world.
+                </li>
+                <li>
+                  Authored in-house solutions including customer-facing web
+                  applications (PHP &amp; JavaScript), datacenter provisioning
+                  (Perl &amp; vSphere CLI), and automated cloud deployment
+                  (Packer &amp; Ansible in AWS EC2).
+                </li>
+              </ul>
+            </article>
+
+            <article class="resume-entry experience-entry">
+              <header class="entry-header">
+                <h3 class="entry-title">
+                  <span class="entry-role">Staff Sergeant Select</span
+                  ><span class="entry-organization"
+                    >, United States Air Force</span
+                  ><span class="entry-qualifier"> (Honorably Separated)</span>
+                </h3>
+                <span class="entry-dates">2005-2010</span>
+              </header>
+              <ul class="resume-list">
+                <li>
+                  Rapid-response communications technician, prepared to deploy
+                  anywhere in Europe or Africa within 72 hours to support
+                  military and humanitarian missions.
+                </li>
+                <li>
+                  Responsible for maintenance and deployment of eight network
+                  infrastructure and computer system suites worth $3,700,000.
+                </li>
+                <li>
+                  Deployed on missions to Baumholder, Bosnia-Herzegovina, and
+                  Hungary, requiring a Top Secret security clearance.
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <section
+            class="resume-section education"
+            aria-labelledby="section-education"
+          >
+            <h2 class="section-heading" id="section-education">Education</h2>
+
+            <article class="resume-entry education-entry">
+              <header class="entry-header">
+                <h3 class="entry-title">
+                  <span class="entry-organization"
+                    >College of Information Science and Technology, University
+                    of Nebraska</span
+                  ><span class="entry-location">, NE</span>
+                </h3>
+                <span class="entry-dates">2009-2013</span>
+              </header>
+              <ul class="resume-list education-list">
+                <li>
+                  Bachelor's degree in Information Assurance with a minor in
+                  Computer Science.
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <section
+            class="resume-section interests"
+            aria-labelledby="section-interests"
+          >
+            <h2 class="section-heading" id="section-interests">Interests</h2>
+            <p class="interests-copy">
+              Avid reader of Astral Codex Ten, pickleball maniac, creator of the
+              biggest Hanabi website, and 10% Pledger.
             </p>
-          </noscript>
+          </section>
         </main>
       </article>
     </div>
